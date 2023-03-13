@@ -10,7 +10,6 @@ using namespace std;
 
 
 string ReverseVowels(string input){
-  string vowelList = "aeiou";
   int startPtr = 0;
   int endPtr = input.length() - 1;
   char temp;
