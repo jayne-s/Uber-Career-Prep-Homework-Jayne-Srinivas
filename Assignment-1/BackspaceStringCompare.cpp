@@ -2,7 +2,7 @@
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
-(Please note that this solution does not work for cases with consecutive # signs.)
+//(Please note that this solution does not work for cases with consecutive # signs.)
 
 #include <iostream>
 using namespace std;
