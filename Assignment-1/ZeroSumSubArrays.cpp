@@ -2,6 +2,7 @@
 // Time Complexity: O(n^2)
 // Space Complexity: O(n)
 
+//(Please note that this solution does not work for all cases such as when the first element itself is 0.)
 
 #include <iostream>
 using namespace std;
