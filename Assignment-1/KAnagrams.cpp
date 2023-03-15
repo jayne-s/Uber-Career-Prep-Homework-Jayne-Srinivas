@@ -20,7 +20,7 @@ bool KAnagrams(string s1, string s2, int k){
 
   for (int j = 0; j < 26; j++){
     if(arr2[j] < arr1[j]){
-      count += abs((arr1[j]) - (arr2[j]));
+      count += ((arr1[j]) - (arr2[j]));
     }
   }
 
