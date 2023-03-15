@@ -2,7 +2,6 @@
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
-//(Please note that this solution does not work for cases with consecutive # signs.)
 
 #include <iostream>
 using namespace std;
@@ -11,39 +10,33 @@ using namespace std;
 
 bool BackspaceStringCompare(string input1, string input2){
   int index = 0;
+  int index1 = 0;
   bool result = false;
-  string firstString, secondString;
   string final1, final2;
-  vector<int> indexes1{};
-  vector<int> indexes2{};
-  
-    for(int i = 0; i < input1.length(); i++){
-      if (input1[i+1] == '#' || input1[i] == '#'){
-     firstString.push_back(input1[i]);
-  
-     firstString.push_back(input1[i-1]);
+
+  for (int i = 0; i < input1.length(); i++) {
+        if (input1[i] != '#') {
+            input1[index] = input1[i];
+            index++;
+        }
+        else if (input1[i] == '#' && index > -1) {
+            index--;
+        }
     }
-    else{
-        indexes1.push_back(i);
-     }
-      }
+
+  final1 = input1.substr(0,index);
   
-    for(int k = 0; k < input2.length(); k++){
-      if(input2[k+1] == '#' || input2[k] == '#')
-    {
-       secondString.push_back(input2[k]);
-     secondString.push_back(input2[k-1]);
-  }
-      else{
-         indexes2.push_back(k);
+  for (int j = 0; j < input2.length(); j++) {
+        if (input2[j] != '#') {
+            input2[index1] = input2[j];
+            index1++;
+        }
+        else if (input2[j] == '#' && index1 > -1) {
+            index1--;
+        }
     }
-    }   
-  for(int a = 0; a < indexes1.size(); a++){
-     final1.push_back(input1[indexes1[a]]);
-   }
-   for(int c = 0; c < indexes2.size(); c++){
-     final2.push_back(input2[indexes2[c]]);
-   }
+  final2 = input2.substr(0,index1);
+  
 
   if(final1 == final2){
     result = true;
@@ -77,4 +70,4 @@ cout << BackspaceStringCompare(set41, set42) << endl;
     return 0;
 }
 
-// Time Spent: 2 hours 
+// Time Spent: 2.5 hours 
