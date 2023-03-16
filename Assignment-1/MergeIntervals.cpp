@@ -16,10 +16,10 @@ vector<vector<int>> finalVector;
 sort(nums.begin(), nums.end());
 
   for(auto i: nums){
-  if(i[0] > finalVector.back()[1]){
+  if(i[0] < finalVector.back()[1]){
     finalVector.push_back(i);
   }
-  else if(i[0] < finalVector.back()[1]){
+  else if(i[0] > finalVector.back()[1]){
     finalVector.back()[0] = min(finalVector.back()[0], i[0]);
     finalVector.back()[1] = max(finalVector.back()[1], i[1]);
   }
